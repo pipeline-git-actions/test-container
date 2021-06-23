@@ -1,0 +1,12 @@
+name: 'Sonar Scan Task'
+description: 'Github Actions for running Sonar Scan.'
+author: 'Linjith'
+inputs: 
+  includePattern:
+    description: 'Scan Include Pattern'
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.includePattern }}
